@@ -1,0 +1,36 @@
+import discord
+from discord.ext import commands
+
+intents = discord.Intents.default()
+intents.message_content = True
+
+bot = commands.Bot(command_prefix='!', intents=intents)
+
+
+@bot.command()
+async def radyoaktif_kirlilik_nedir(ctx):
+    await ctx.send(''' Radyoaktif kirlilik, çevreye radyoaktif maddelerin salınması veya yayılması sonucu oluşan bir çevre kirliliği türüdür.,
+                   Bu maddeler genellikle nükleer enerji üretimi, nükleer silahlar, tıbbi kullanım ve endüstriyel uygulamalar gibi faaliyetlerden kaynaklanır.''')
+    with open('radyoactivpolition.jpg', 'rb') as f:
+        # Dönüştürülen Discord kütüphane dosyasını bu değişkende saklayalım!
+        picture = discord.File(f)
+   # Daha sonra bu dosyayı bir parametre olarak gönderebiliriz!
+    await ctx.send(file=picture)
+
+@bot.command()
+async def  hangi_faaliyetler_radyoaktif_kirliliğe_neden_olur(ctx):
+    await ctx.send('''Radyoaktif kirliliğe neden olan ana faaliyetler arasında nükleer enerji üretimi, nükleer silahlar, tıbbi kullanım ve endüstriyel uygulamalar yer alır.
+                    Bu faaliyetler sırasında ortaya çıkan radyoaktif atıklar, çevre kirliliğine ve insan sağlığına zarar verebilir.''')
+@bot.command()
+async def  radyoaktif_kirlilik_ne_gibi_etkilere_neden_olabilir(ctx):
+    await ctx.send('''Radyoaktif kirlilik çevresel etkilere ve insan sağlığına zararlı etkilere yol açabilir. 
+                   Bunlar arasında kanser riski artışı, genetik bozukluklar, doğum kusurları, çevresel tahribat ve biyolojik çeşitliliğin zarar görmesi gibi durumlar yer alabilir.''')
+@bot.command()
+async def radyoaktif_atıkların_güvenli_bir_şekilde_bertarafı_nasıl_sağlanır(ctx):
+    await ctx.send(''' Radyoaktif atıkların güvenli bir şekilde bertaraf edilmesi için çeşitli yöntemler kullanılır.
+                    Bunlar arasında derin jeolojik depolama, yüksek sıcaklıkta yakma (incineration), sıvılaştırma ve sağlama gibi yöntemler bulunur.
+                    Bu yöntemler, radyoaktif atıkların insan sağlığına ve çevreye zarar vermeden bertarafını sağlamaya yöneliktir.''')
+
+
+
+bot.run("MTIxNTM3ODAyMzA3NTkzODMwNA.G8aNgv.RjuFq8kbeS55O_Zxr0wifOFX5HP8IJgcxLwxW8")
